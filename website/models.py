@@ -33,3 +33,6 @@ class Company(models.Model):
   def delete(self, *args, **kwargs): 
     super(Company, self).delete(*args, **kwargs) 
     File.objects.filter(filename = self.image.name).delete()
+
+  class Meta:
+      verbose_name_plural = "companies"
