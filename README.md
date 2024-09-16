@@ -1,5 +1,7 @@
 # theta360 Automotive Guide Website
 
+This is the theta 360 automotive guide website ported from the old site [here](https://automotive.theta360.guide/) to Django.
+
 1. [Project Structure](#project-structure)
 2. [Getting the app running](#getting-the-app-running)
 
