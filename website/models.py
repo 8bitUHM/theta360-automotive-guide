@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator
+from django.utils.text import slugify
 
 # Create your models here.
 class File(models.Model): 
@@ -13,6 +14,7 @@ class File(models.Model):
 class Company(models.Model): 
   # Company details field
   company_name = models.CharField(max_length=100, help_text="Enter the company's name.") 
+  slug = models.SlugField(default="", null=False, unique=True)
   tagline = models.CharField(max_length=255, help_text="Enter a tagline for the company.")
   details = models.TextField(help_text="Enter a detailed description of the company.")
   reference_link = models.URLField(max_length=200, default="", help_text="Enter the link to the company.")
@@ -29,6 +31,11 @@ class Company(models.Model):
 
   def __str__(self): 
     return self.company_name
+  
+  def save(self, *args, **kwargs):
+      if not self.slug:
+          self.slug = slugify(self.company_name)
+      super(Company, self).save(*args, **kwargs)
 
   def delete(self, *args, **kwargs): 
     super(Company, self).delete(*args, **kwargs) 

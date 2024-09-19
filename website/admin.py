@@ -3,6 +3,7 @@ from .models import *
 
 # Register your models here.
 class CompaniesAdmin(admin.ModelAdmin): 
+  exclude = ('slug',)
   def get_actions(self, request): 
     actions = super().get_actions(request) 
     if request.user.username[0].upper() != "J": 
@@ -10,6 +11,6 @@ class CompaniesAdmin(admin.ModelAdmin):
         del actions["delete_selected"] 
     return actions
   def __str__(self): 
-    return self.name
+    return self.company_name
   
 admin.site.register(Company, CompaniesAdmin)
