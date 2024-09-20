@@ -12,7 +12,7 @@ def index(request):
 
     companies = Company.objects.all().order_by('company_name')
     print(companies)
-    return render(request, 'pages/home.html', {"company": companies})
+    return render(request, 'pages/home.html', {"companies": companies})
 
 def company_detail(request, slug):
     company = get_object_or_404(Company, slug=slug)
