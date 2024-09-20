@@ -25,4 +25,37 @@
     <a href="#" class="mt-10 text-sm uppercase border border-white text-white py-3 px-14 hover:bg-white hover:text-black transition">Choose Software</a>
   </div>
 </div>
+
+<section class="text-gray-600 body-font"></section>
+  <div class="container py-24 mx-auto">
+
+    <div class="grid lg:grid-cols-2 grid-cols-1">
+      <div class=" w-full mb-6 lg:mb-0 px-4">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Our Guide</h1>
+        <div class="h-1 w-20 bg-gray-500 rounded"></div>
+      </div>
+      <div class="px-4">
+        <p class=" w-full leading-relaxed text-gray-500">Great automotive imaging software is critical for fast workflows to prep cars for 
+          sales. <span class="underline">theta360.guide provides unbiased tests of software with THETA X 11K images</span>. 
+          We are an independent community site sponsored by RICOH and receive no money from software vendors.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid xl:grid-cols-3 md:grid-cols-2 gap-5 my-10 md:mx-0">
+      {% for company in companies %}
+      <div class="w-full p-4">
+        <div class="bg-gray-100 p-6 rounded-lg">
+          <img class="h-full rounded w-full object-cover object-center mb-6" src={{company.image.url}} alt="content">
+          <a href="/company/{{company.slug}}">
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-2 underline">{{ company.company_name}}</h2>
+          </a>
+          <p class="leading-relaxed text-base">{{ company.tagline}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 {% endblock %}
