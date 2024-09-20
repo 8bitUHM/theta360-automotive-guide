@@ -3,7 +3,7 @@ from .models import *
 
 # Register your models here.
 class CompaniesAdmin(admin.ModelAdmin): 
-  exclude = ('slug',)
+  prepopulated_fields = {"slug": ["company_name",]}
   def get_actions(self, request): 
     actions = super().get_actions(request) 
     if request.user.username[0].upper() != "J": 

@@ -33,12 +33,6 @@ class Company(models.Model):
 
   def __str__(self): 
     return self.company_name
-  
-  # overwrites save and sets the slug to the company name
-  def save(self, *args, **kwargs):
-      if not self.slug:
-          self.slug = slugify(self.company_name)
-      super(Company, self).save(*args, **kwargs)
 
   def delete(self, *args, **kwargs): 
     super(Company, self).delete(*args, **kwargs) 
