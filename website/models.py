@@ -12,9 +12,8 @@ class File(models.Model):
     return self.filename
 
 class Company(models.Model): 
-  # Company details field
+  # Company detail fields
   company_name = models.CharField(max_length=100, help_text="Enter the company's name.") 
-  slug = models.SlugField(default="", null=False, unique=True)
   tagline = models.CharField(max_length=255, help_text="Enter a tagline for the company.")
   details = models.TextField(help_text="Enter a detailed description of the company.")
   reference_link = models.URLField(max_length=200, default="", help_text="Enter the link to the company.")
@@ -29,9 +28,13 @@ class Company(models.Model):
   opinion = models.TextField(help_text="Opinion on the company.")
   additional_details = models.TextField(help_text="Additional details about the company.")
 
+  # slug is automatically generated when a new company is added
+  slug = models.SlugField(default="", null=False, unique=True)
+
   def __str__(self): 
     return self.company_name
   
+  # overwrites save and sets the slug to the company name
   def save(self, *args, **kwargs):
       if not self.slug:
           self.slug = slugify(self.company_name)
