@@ -1,5 +1,6 @@
 # example/views.py
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from .models import Company
 
 def index(request):
@@ -13,3 +14,6 @@ def index(request):
     print(companies)
     return render(request, 'pages/home.html', {"company": companies})
 
+def company_detail(request, slug):
+    company = get_object_or_404(Company, slug=slug)
+    return render(request, 'pages/company.html', {'company': company})

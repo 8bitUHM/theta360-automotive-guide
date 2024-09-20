@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator
+from django.utils.text import slugify
 
 # Create your models here.
 class File(models.Model): 
@@ -11,7 +12,7 @@ class File(models.Model):
     return self.filename
 
 class Company(models.Model): 
-  # Company details field
+  # Company detail fields
   company_name = models.CharField(max_length=100, help_text="Enter the company's name.") 
   tagline = models.CharField(max_length=255, help_text="Enter a tagline for the company.")
   details = models.TextField(help_text="Enter a detailed description of the company.")
@@ -26,6 +27,9 @@ class Company(models.Model):
   view = models.PositiveSmallIntegerField(default=0, validators=[MaxValueValidator(100)], help_text="Rating for viewing feature (max 100).")
   opinion = models.TextField(help_text="Opinion on the company.")
   additional_details = models.TextField(help_text="Additional details about the company.")
+
+  # slug is automatically generated when a new company is added
+  slug = models.SlugField(default="", null=False, unique=True)
 
   def __str__(self): 
     return self.company_name
