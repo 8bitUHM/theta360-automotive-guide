@@ -56,63 +56,74 @@ Best car interior photo software for 360 images with RICOH
 
   </div>
 
-  <!-- <div class="flex justify-center items-center h-screen">
-    <div class="font-bold underline whitespace-nowrap text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl">
-      compare SC2 vs X models.
-    </div>
-  </div> -->
+  <!-- Row 1 -->
+  <div class="text-center text-black p-4 ">
+    <h2 class="fs-3 fs-sm-4">
+      <span class="font-bold underline whitespace-nowrap text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl">
+        compare SC2 vs X models.</span>
+    </h2>
+  </div>
 
-  <!-- <div class="flex justify-center items-center mb-20">
-    <div class="font-bold underline whitespace-nowrap text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl">
-      compare SC2 vs X models.
-    </div>
-  </div> -->
-
-  <!-- <div class="flex justify-center items-center">
-    <div class="font-bold underline whitespace-nowrap text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl">
-      <div class="grid xl:grid-cols-2 md:grid-cols-1">
-        <p>apple</p>
-        <p>apple</p>
-      </div>
-    </div>
-  </div> -->
-
-  <div class="container mb-20">
-    <div class="row justify-content-center gy-4 gx-lg-4">
-      <div class="col-12 mb-3 mb-md-5 text-center">
-        <h2 class="fs-3 fs-sm-4">
-          <span
-            class="font-bold underline whitespace-nowrap text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl">compare
-            SC2 vs X models.</span>
+  <!-- Row 2 with 2 Columns -->
+  <div class="grid grid-cols-2 gap-4 p-4">
+    <div class="text-white p-4 ml-80 flex items-start">
+      <img src="{% static 'website/picture-svgrepo-com.svg' %}" alt="SVG Image" class="w-16 h-16 mr-4">
+      <div>
+        <h2 class="font-bold text-black">
+          image detail
         </h2>
+        <p class="text-gray-500">THETA X takes 11K images compared to 5.4K SC2 images, resulting in high-impact car
+          interior shots, quicker buying decisions, and higher sales prices.</p>
+        <a href="https://youtu.be/Aj-3x45yGaE" target="_blank" rel="noopener noreferrer" class="text-blue-500">info</a>
+      </div>
+    </div>
+
+    <div class="text-white p-4 mr-80 flex items-start">
+      <img src="{% static 'website/target-svgrepo-com.svg' %}" alt="SVG Image" class="w-16 h-16 mr-4">
+      <div>
+        <h2 class="font-bold text-black">
+          HDR
+        </h2>
+        <p class="text-gray-500">
+          HDR helps captures light and dark areas of the automobile interior. THETA X has superior HDR processing,
+          resulting in better visibility.
+        </p>
+        <a href="https://youtu.be/3RVCiWjm2zw" target="_blank" rel="noopener noreferrer" class="text-blue-500">info</a>
       </div>
     </div>
   </div>
 
-  <div class="flex justify-center items-center">
-    <div class="grid grid-cols-2 gap-4">
-      <div class="w-36 h-16 bg-blue-500"></div>
-      <div class="w-32 h-16 bg-red-500"></div>
-      <div class="w-32 h-16 bg-green-500"></div>
-      <div class="w-32 h-16 bg-yellow-500"></div>
+  <!-- Row 3 with 2 Columns -->
+  <div class="grid grid-cols-2 gap-4 p-4">
+    <div class="text-white p-4 ml-80 flex items-start">
+      <img src="{% static 'website/favorites-button.svg' %}" alt="SVG Image" class="w-16 h-16 mr-4">
+      <div>
+        <h2 class="font-bold text-black">
+          image transfer speed
+        </h2>
+        <p class="text-gray-500">
+          THETA X 5GHz WiFi can transfer 11K images more than twice as fast as the SC2 can transfer 5.4K images.
+        </p>
+        <a href="https://youtu.be/uAqDgjrjQTk" target="_blank" rel="noopener noreferrer" class="text-blue-500">info</a>
+      </div>
+    </div>
+
+    <div class="text-white p-4 mr-80 flex items-start">
+      <img src="{% static 'website/cpu.png' %}" alt="SVG Image" class="w-16 h-16 mr-4">
+      <div>
+        <h2 class="font-bold text-black">
+          firmware updates
+        </h2>
+        <p class="text-gray-500">
+          THETA X can update firmware from the camera. SC2 requires RICOH desktop software.
+        </p>
+        <a href="https://youtube.com/shorts/IWgXWMwec4k" target="_blank" rel="noopener noreferrer"
+          class="text-blue-500">info</a>
+      </div>
     </div>
   </div>
+  </body>
 
-  <div class="grid gap-4 grid-rows-2 flex justify-center items-center">
-    <div class="font-bold whitespace-nowrap text-2xl">
-      image detail
-      <p class="text-gray-500">
-        THETA X takes 11K images compared to 5.4K SC2 images, resulting in high-impact car interior shots, quicker
-        buying
-        decisions, and higher sales prices.
-      </p>
-    </div>
-    <div>
-      02
-    </div>
-  </div>
+  </section>
 
-</div>
-</section>
-
-{% endblock %}
+  {% endblock %}
