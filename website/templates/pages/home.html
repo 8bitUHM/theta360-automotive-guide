@@ -1,129 +1,108 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block title %}
-Best car interior photo software for 360 images with RICOH
-{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block title %} Best car interior photo software for 360 images with RICOH {% endblock %} {% block content %}
 <div class="relative w-full h-screen overflow-hidden">
-  <!-- background video -->
-  <video class="absolute top-0 left-0 w-full h-full object-cover" src="{% static 'website/background_video.mp4' %}"
-    autoplay loop muted playsinline style="transform: scale(1.15);"></video>
-  <div class="absolute inset-0 bg-black bg-opacity-85"></div>
-  <!-- content -->
-  <div class="container mx-auto relative flex flex-col items-start justify-center h-full text-white p-8"
-    style="justify-content: flex-start; padding-left: 10%; margin-top: 12%;">
-    <p
-      class="font-bold italic uppercase underline whitespace-nowrap text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-7xl">
-      Ricoh Theta X</p>
-    <p class="mt-2 italic text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl">automobile imaging leader</p>
-    <a href="#software"
-      class="mt-10 text-sm uppercase border border-white text-white py-3 px-14 hover:bg-white hover:text-black transition">Choose
-      Software</a>
-  </div>
+    <!-- background video -->
+    <video class="absolute top-0 left-0 w-full h-full object-cover" src="{% static 'website/background_video.mp4' %}" autoplay loop muted playsinline style="transform: scale(1.15);"></video>
+    <div class="absolute inset-0 bg-black bg-opacity-85"></div>
+    <!-- content -->
+    <div class="container mx-auto relative flex flex-col items-start justify-center h-full text-white p-8" style="justify-content: flex-start; padding-left: 10%; margin-top: 12%;">
+        <p class="font-bold italic uppercase underline whitespace-nowrap text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-7xl">
+            Ricoh Theta X
+        </p>
+        <p class="mt-2 italic text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl">automobile imaging leader</p>
+        <a href="#software" class="mt-10 text-sm uppercase border border-white text-white py-3 px-14 hover:bg-white hover:text-black transition">Choose Software</a>
+    </div>
 </div>
 
-<div class="container py-24 mx-auto" id="software">
-
-  <div class="grid lg:grid-cols-2 grid-cols-1">
-    <div class=" w-full mb-6 lg:mb-0 px-4">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Our Guide</h1>
-      <div class="h-1 w-20 bg-gray-500 rounded"></div>
-    </div>
-    <div class="px-4">
-      <p class=" w-full leading-relaxed text-gray-500">Great automotive imaging software is critical for fast workflows
-        to prep cars for
-        sales. <span class="underline">theta360.guide provides unbiased tests of software with THETA X 11K
-          images</span>.
-        We are an independent community site sponsored by RICOH and receive no money from software vendors.
-      </p>
-    </div>
-  </div>
-
-  <div class="grid xl:grid-cols-4 md:grid-cols-2 gap-5 my-10 md:mx-0">
-    {% for company in companies %}
-    <div class="w-full p-4">
-      <div class="p-6 rounded-lg">
-        <img class="h-full rounded w-full object-cover object-center mb-6" src={{company.image.url}} alt="content">
-        <a href="/company/{{company.slug}}">
-          <h2 class="text-lg text-gray-900 font-medium title-font mb-2 underline">{{ company.company_name}}</h2>
-        </a>
-        <p class="leading-relaxed text-base">{{ company.tagline}}</p>
-      </div>
-    </div>
-    {% endfor %}
-
-  </div>
-
-  <!-- Row 1 -->
-  <div class="text-center text-black p-4 ">
-    <h2 class="fs-3 fs-sm-4">
-      <span class="font-bold underline whitespace-nowrap text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl">
-        compare SC2 vs X models.</span>
-    </h2>
-  </div>
-
-  <!-- Row 2 with 2 Columns -->
-  <div class="grid grid-cols-2 gap-4 p-4">
-    <div class="text-white p-4 ml-80 flex items-start">
-      <img src="{% static 'website/picture-svgrepo-com.svg' %}" alt="SVG Image" class="w-16 h-16 mr-4">
-      <div>
-        <h2 class="font-bold text-black">
-          image detail
-        </h2>
-        <p class="text-gray-500">THETA X takes 11K images compared to 5.4K SC2 images, resulting in high-impact car
-          interior shots, quicker buying decisions, and higher sales prices.</p>
-        <a href="https://youtu.be/Aj-3x45yGaE" target="_blank" rel="noopener noreferrer" class="text-blue-500">info</a>
-      </div>
+<div class="container mt-6 mx-auto" id="software">
+    <div class="text-center p-5">
+        <div class="w-full mb-4">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900 underline">Our Guide</h1>
+            <!-- <div class="h-1 w-20 bg-gray-500 rounded"></div> -->
+        </div>
+        <div class="px-4">
+            <p class="w-full leading-relaxed text-gray-500">
+                Great automotive imaging software is critical for fast workflows to prep cars for sales. <span class="underline">theta360.guide provides unbiased tests of software with THETA X 11K images</span>. We are an independent
+                community site sponsored by RICOH and receive no money from software vendors.
+            </p>
+        </div>
     </div>
 
-    <div class="text-white p-4 mr-80 flex items-start">
-      <img src="{% static 'website/target-svgrepo-com.svg' %}" alt="SVG Image" class="w-16 h-16 mr-4">
-      <div>
-        <h2 class="font-bold text-black">
-          HDR
-        </h2>
-        <p class="text-gray-500">
-          HDR helps captures light and dark areas of the automobile interior. THETA X has superior HDR processing,
-          resulting in better visibility.
-        </p>
-        <a href="https://youtu.be/3RVCiWjm2zw" target="_blank" rel="noopener noreferrer" class="text-blue-500">info</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Row 3 with 2 Columns -->
-  <div class="grid grid-cols-2 gap-4 p-4">
-    <div class="text-white p-4 ml-80 flex items-start">
-      <img src="{% static 'website/favorites-button.svg' %}" alt="SVG Image" class="w-16 h-16 mr-4">
-      <div>
-        <h2 class="font-bold text-black">
-          image transfer speed
-        </h2>
-        <p class="text-gray-500">
-          THETA X 5GHz WiFi can transfer 11K images more than twice as fast as the SC2 can transfer 5.4K images.
-        </p>
-        <a href="https://youtu.be/uAqDgjrjQTk" target="_blank" rel="noopener noreferrer" class="text-blue-500">info</a>
-      </div>
+    <div class="grid xl:grid-cols-3 md:grid-cols-2 gap-5  md:mx-0">
+        {% for company in companies %}
+        <div class="w-full p-4">
+            <div class="p-6 rounded-lg">
+                <img class="h-full rounded w-full object-cover object-center mb-6" src="{{company.image.url}}" alt="content" />
+                <a href="/company/{{company.slug}}">
+                    <h2 class="text-lg text-gray-900 font-medium title-font mb-2 underline">{{ company.company_name}}</h2>
+                </a>
+                <p class="leading-relaxed text-base">{{ company.tagline}}</p>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 
-    <div class="text-white p-4 mr-80 flex items-start">
-      <img src="{% static 'website/cpu.png' %}" alt="SVG Image" class="w-16 h-16 mr-4">
-      <div>
-        <h2 class="font-bold text-black">
-          firmware updates
-        </h2>
-        <p class="text-gray-500">
-          THETA X can update firmware from the camera. SC2 requires RICOH desktop software.
-        </p>
-        <a href="https://youtube.com/shorts/IWgXWMwec4k" target="_blank" rel="noopener noreferrer"
-          class="text-blue-500">info</a>
-      </div>
+    <div class="mb-20">
+        <div class="text-center text-black p-4">
+            <h2 class="fs-3 fs-sm-4">
+                <span class="font-bold underline whitespace-nowrap text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl"> compare SC2 vs X models.</span>
+            </h2>
+        </div>
+
+        <div class="grid gap-4 grid-cols-1 md:grid-cols-2 xl:w-10/12 mx-auto">
+            <div class="text-white p-4 flex items-start">
+                <img src="{% static 'website/picture-svgrepo-com.svg' %}" alt="SVG Image" class="w-16 h-16 mr-4" />
+                <div>
+                    <h2 class="font-bold text-black">
+                        image detail
+                    </h2>
+                    <p class="text-gray-500">THETA X takes 11K images compared to 5.4K SC2 images, resulting in high-impact car interior shots, quicker buying decisions, and higher sales prices.</p>
+                    <a href="https://youtu.be/Aj-3x45yGaE" target="_blank" rel="noopener noreferrer" class="text-blue-500">info</a>
+                </div>
+            </div>
+
+            <div class="text-white p-4 flex items-start">
+                <img src="{% static 'website/target-svgrepo-com.svg' %}" alt="SVG Image" class="w-16 h-16 mr-4" />
+                <div>
+                    <h2 class="font-bold text-black">
+                        HDR
+                    </h2>
+                    <p class="text-gray-500">
+                        HDR helps captures light and dark areas of the automobile interior. THETA X has superior HDR processing, resulting in better visibility.
+                    </p>
+                    <a href="https://youtu.be/3RVCiWjm2zw" target="_blank" rel="noopener noreferrer" class="text-blue-500">info</a>
+                </div>
+            </div>
+
+            <!-- Row 3 with 2 Columns -->
+
+            <div class="text-white p-4 flex items-start">
+                <img src="{% static 'website/favorites-button.svg' %}" alt="SVG Image" class="w-16 h-16 mr-4" />
+                <div>
+                    <h2 class="font-bold text-black">
+                        image transfer speed
+                    </h2>
+                    <p class="text-gray-500">
+                        THETA X 5GHz WiFi can transfer 11K images more than twice as fast as the SC2 can transfer 5.4K images.
+                    </p>
+                    <a href="https://youtu.be/uAqDgjrjQTk" target="_blank" rel="noopener noreferrer" class="text-blue-500">info</a>
+                </div>
+            </div>
+
+            <div class="text-white p-4 flex items-start">
+                <img src="{% static 'website/cpu.png' %}" alt="SVG Image" class="w-16 h-16 mr-4" />
+                <div>
+                    <h2 class="font-bold text-black">
+                        firmware updates
+                    </h2>
+                    <p class="text-gray-500">
+                        THETA X can update firmware from the camera. SC2 requires RICOH desktop software.
+                    </p>
+                    <a href="https://youtube.com/shorts/IWgXWMwec4k" target="_blank" rel="noopener noreferrer" class="text-blue-500">info</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  </body>
 
-  </section>
-
-  {% endblock %}
+   
+</div>
+{% endblock %}
