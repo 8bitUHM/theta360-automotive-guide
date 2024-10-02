@@ -53,8 +53,12 @@ DATABASES = {
 ```
 3. In ./core folder, create a new file called .env and add the environment variables from our project discord channel theta-360
 
-4. Start tailwind styling compilation by running `python manage.py tailwind start` in a new terminal, make sure that after making changes to UI that uses tailwind, collect static by running `python manage.py collectstatic`
+4. Cd into theme/static_src and run `npm install`
 
-5. Start the app by running `python manage.py runserver` or `python3 manage.py runserver` in terminal, the app should be running locally on port 8000, http://localhost:8000
+5. Start tailwind styling compilation by running `python manage.py tailwind start` or `python manage.py tailwind build` to build once, make sure that after making changes to UI that uses tailwind
+
+6. Collect all static files with `python manage.py collectstatic`
+
+7. Start the app by running `python manage.py runserver` in terminal, the app should be running locally on port 8000, http://127.0.0.1:8000/
 
 
