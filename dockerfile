@@ -2,7 +2,7 @@
 FROM python:3.12
 
 # Project secret key define for build argument
-ARG SECRET_KEY
+ARG PROJECT_SECRET
 
 # Set environment variables for Python to run in unbuffered mode
 ENV PYTHONUNBUFFERED=1
