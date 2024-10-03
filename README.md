@@ -55,7 +55,7 @@ DATABASES = {
 
 4. Cd into theme/static_src and run `npm install`
 
-5. Start tailwind styling compilation by running `python manage.py tailwind start` or `python manage.py tailwind build` to build once, make sure that after making changes to UI that uses tailwind
+5. Start tailwind styling compilation by running `python manage.py tailwind start` or `python manage.py tailwind build` to build once
 
 6. Collect all static files with `python manage.py collectstatic`
 
