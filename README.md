@@ -59,6 +59,8 @@ DATABASES = {
 
 6. Collect all static files with `python manage.py collectstatic`
 
-7. Start the app by running `python manage.py runserver` in terminal, the app should be running locally on port 8000, http://127.0.0.1:8000/
+7. Update your local database by running `python manage.py migrate`
+
+8. Start the app by running `python manage.py runserver` in terminal, the app should be running locally on port 8000, http://127.0.0.1:8000/
 
 
