@@ -33,12 +33,13 @@
   
       <!-- Right side - Progress Bars and Details -->
       <div class="flex flex-col space-y-6">
+        {% if company.show_chart %}
         <!-- Progress Bars -->
         <div class="space-y-4">
           <!-- Bar 1 -->
           <div class="flex justify-between items-center">
             <span>Connect</span>
-            <span>100%</span>
+            <span>{{ company.connect }}%</span>
           </div>
           <div class="w-full h-2 bg-gray-200">
             <div class="w-full h-full bg-gray-800"></div>
@@ -47,7 +48,7 @@
           <!-- Bar 2 -->
           <div class="flex justify-between items-center">
             <span>Take Picture</span>
-            <span>100%</span>
+            <span>{{ company.take_picture }}%</span>
           </div>
           <div class="w-full h-2 bg-gray-200">
             <div class="w-full h-full bg-gray-800"></div>
@@ -56,16 +57,17 @@
           <!-- Bar 3 -->
           <div class="flex justify-between items-center">
             <span>View</span>
-            <span>100%</span>
+            <span>{{ company.view }}%</span>
           </div>
           <div class="w-full h-2 bg-gray-200">
             <div class="w-full h-full bg-gray-800"></div>
           </div>
         </div>
+        {% endif %}
   
         <!-- Details Section -->
         <div class="text-gray-600 text-sm">
-          <p><span class="font-bold">details:</span> Can take and display 11K pictures. No immediate post view in mobile app.</p>
+          <p><span class="font-bold">details:</span>{{ company.additional_details }}</p>
         </div>
       </div>
     </div>
