@@ -7,8 +7,68 @@
 {% block content %}
 <div class="container mx-auto py-12">
     <h1 class="text-4xl font-bold text-center">{{ company.company_name }}</h1>
-      <div class="flex justify-center mt-6">
-        <img class="w-64 h-64 object-cover" src="{{ company.image.url }}" alt="{{ company.company_name }}">
+    <!-- left side : big company image -->
+    <div class="flex justify-center mt-6">
+      <img class="w-64 h-64 object-cover" src="{{ company.image.url }}" alt="{{ company.company_name }}">
     </div>
+    
+    <!-- chart and details section -->
+    <div class="flex justify-between">
+      <!-- Left side - Circle and Opinion -->
+      {% if company.show_chart %}
+      <div class="flex flex-col items-center space-y-8">
+        <!-- Circular Percentage -->
+        <div class="flex flex-col items-center justify-center w-40 h-40 border-4 border-gray-800 rounded-full">
+          <span class="text-5xl font-bold">100%</span>
+          <span class="text-lg text-gray-500">X Ready</span>
+        </div>
+      {% endif %}
+  
+        <!-- Opinion Section -->
+        <div class="text-center">
+          <h3 class="text-lg font-bold">our opinion</h3>
+          <p class="text-gray-700">{{ company.opinion }}</p>
+        </div>
+      </div>
+  
+      <!-- Right side - Progress Bars and Details -->
+      <div class="flex flex-col space-y-6">
+        <!-- Progress Bars -->
+        <div class="space-y-4">
+          <!-- Bar 1 -->
+          <div class="flex justify-between items-center">
+            <span>Connect</span>
+            <span>100%</span>
+          </div>
+          <div class="w-full h-2 bg-gray-200">
+            <div class="w-full h-full bg-gray-800"></div>
+          </div>
+  
+          <!-- Bar 2 -->
+          <div class="flex justify-between items-center">
+            <span>Take Picture</span>
+            <span>100%</span>
+          </div>
+          <div class="w-full h-2 bg-gray-200">
+            <div class="w-full h-full bg-gray-800"></div>
+          </div>
+  
+          <!-- Bar 3 -->
+          <div class="flex justify-between items-center">
+            <span>View</span>
+            <span>100%</span>
+          </div>
+          <div class="w-full h-2 bg-gray-200">
+            <div class="w-full h-full bg-gray-800"></div>
+          </div>
+        </div>
+  
+        <!-- Details Section -->
+        <div class="text-gray-600 text-sm">
+          <p><span class="font-bold">details:</span> Can take and display 11K pictures. No immediate post view in mobile app.</p>
+        </div>
+      </div>
+    </div>
+
 </div>
 {% endblock %}
