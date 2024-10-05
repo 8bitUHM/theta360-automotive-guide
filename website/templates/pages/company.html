@@ -1,15 +1,28 @@
 {% extends "base.html" %}
 
 {% block title %}
-  {{ company.company_name }}
+{{ company.company_name }}
 {% endblock %}
 
 {% block content %}
-<div class="container mx-auto py-12">
-    <h1 class="text-4xl font-bold text-center">{{ company.company_name }}</h1>
-    <!-- left side : big company image -->
-    <div class="flex justify-center mt-6">
-      <img class="w-64 h-64 object-cover" src="{{ company.image.url }}" alt="{{ company.company_name }}">
+<!-- container for left and right section -->
+<div class="flex flex-col lg:flex-row items-center lg:items-start mx-auto">
+  <!-- left side : big company image -->
+  <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
+    <img class="object-cover" src="{{ company.image.url }}" alt="{{ company.company_name }}">
+  </div>
+  
+  <!-- right section -->
+  <div class="w-full lg:w-1/2 lg:pl-12 py-12 px-12">
+    
+    <!-- Company description -->
+    <div class="mb-6">
+      <h2 class="text-2xl font-bold mb-2">EZ360</h2>
+      <h3 class="text-5lg font-semibold mb-2">{{ company.tagline }}</h3>
+      <p class="text-gray-700">{{ company.details }}</p>
+      <p class="mt-4 font-bold">REFERENCE</p>
+      <p><a href="{{ company.reference_link }}" class="text-blue-500">EZ360 website</a></p>
+      <p class="text-sm italic text-gray-500 mt-2">THETA X compatibility - for the best interior car images</p>
     </div>
     
     <!-- chart and details section -->
@@ -67,8 +80,9 @@
   
         <!-- Details Section -->
         <div class="text-gray-600 text-sm">
-          <p><span class="font-bold">details:</span>{{ company.additional_details }}</p>
+          <p><span class="font-bold">Details:</span> {{ company.additional_details }}</p>
         </div>
+    </div>
       </div>
     </div>
 
