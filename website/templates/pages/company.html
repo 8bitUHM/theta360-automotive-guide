@@ -6,7 +6,7 @@
 
 {% block content %}
 <!-- container for left and right section -->
-<div class="flex flex-col lg:flex-row items-center lg:items-start mx-auto">
+<div class="flex flex-col lg:flex-row items-center lg:items-start">
   <!-- left side : big company image -->
   <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
     <img class="object-cover" src="{{ company.image.url }}" alt="{{ company.company_name }}">
@@ -20,15 +20,15 @@
       <h2 class="text-2xl font-bold mb-2">{{ company.company_name }}</h2>
       <h3 class="text-5lg font-semibold mb-2">{{ company.tagline }}</h3>
       <p class="text-gray-700">{{ company.details }}</p>
-      <p class="mt-4 font-bold">REFERENCE</p>
+      <p class="mt-8 font-bold">REFERENCE</p>
       <p><a href="{{ company.reference_link }}" class="text-gray-500 hover:text-gray-700 hover:underline">{{ company.reference_link_label }}</a></p>
     </div>
     
     <!-- chart and details section -->
-    <div class="flex justify-between">
+    <div class="flex flex-col lg:flex-row lg:space-y-0 lg:space-x-6 pt-40 pb-32">
       <!-- Left side - Circle and Opinion -->
       {% if company.show_chart %}
-      <div class="flex flex-col items-center space-y-8">
+      <div class="flex flex-col items-center space-y-4 px-12 mx-auto mb-8">
         <!-- Circular Percentage -->
         <div class="flex flex-col items-center justify-center w-40 h-40 border-4 border-gray-800 rounded-full">
           <span class="text-5xl font-bold">100%</span>
@@ -44,8 +44,8 @@
     
 
       <!-- Right side - Progress Bars and Details -->
-      <div class="flex flex-col space-y-6">
-        {% if company.show_chart %}
+      {% if company.show_chart %}
+      <div class="flex flex-col space-y-4 px-12">
         <!-- Progress Bars -->
         <div class="space-y-4">
           <!-- Bar 1 -->
@@ -54,7 +54,7 @@
             <span>{{ company.connect }}%</span>
           </div>
           <div class="w-full h-2 bg-gray-200">
-            <div class="w-full h-full bg-gray-800"></div>
+            <div class="w-full h-full bg-gray-800 rounded-md"></div>
           </div>
   
           <!-- Bar 2 -->
@@ -63,7 +63,7 @@
             <span>{{ company.take_picture }}%</span>
           </div>
           <div class="w-full h-2 bg-gray-200">
-            <div class="w-full h-full bg-gray-800"></div>
+            <div class="w-full h-full bg-gray-800 rounded-md"></div>
           </div>
   
           <!-- Bar 3 -->
@@ -72,7 +72,7 @@
             <span>{{ company.view }}%</span>
           </div>
           <div class="w-full h-2 bg-gray-200">
-            <div class="w-full h-full bg-gray-800"></div>
+            <div class="w-full h-full bg-gray-800 rounded-md"></div>
           </div>
         </div>
 
@@ -80,8 +80,12 @@
         <div class="text-gray-600 text-sm">
           <p><span class="font-bold">Details:</span> {{ company.additional_details }}</p>
         </div>
-        {% endif %}
-    </div>
+      </div>
+      {% endif %}
+
+      {% if not company.show_chart %}
+      <div>testing chart coming soon...</div>
+      {% endif %}
       </div>
     </div>
 
