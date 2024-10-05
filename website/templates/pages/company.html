@@ -17,12 +17,11 @@
     
     <!-- Company description -->
     <div class="mb-6">
-      <h2 class="text-2xl font-bold mb-2">EZ360</h2>
+      <h2 class="text-2xl font-bold mb-2">{{ company.company_name }}</h2>
       <h3 class="text-5lg font-semibold mb-2">{{ company.tagline }}</h3>
       <p class="text-gray-700">{{ company.details }}</p>
       <p class="mt-4 font-bold">REFERENCE</p>
-      <p><a href="{{ company.reference_link }}" class="text-blue-500">EZ360 website</a></p>
-      <p class="text-sm italic text-gray-500 mt-2">THETA X compatibility - for the best interior car images</p>
+      <p><a href="{{ company.reference_link }}" class="text-gray-500 hover:text-gray-700 hover:underline">{{ company.reference_link_label }}</a></p>
     </div>
     
     <!-- chart and details section -->
@@ -35,15 +34,15 @@
           <span class="text-5xl font-bold">100%</span>
           <span class="text-lg text-gray-500">X Ready</span>
         </div>
-      {% endif %}
-  
         <!-- Opinion Section -->
         <div class="text-center">
-          <h3 class="text-lg font-bold">our opinion</h3>
+          <h3 class="text-lg font-bold">Our Opinion</h3>
           <p class="text-gray-700">{{ company.opinion }}</p>
         </div>
       </div>
-  
+      {% endif %}
+    
+
       <!-- Right side - Progress Bars and Details -->
       <div class="flex flex-col space-y-6">
         {% if company.show_chart %}
@@ -76,12 +75,12 @@
             <div class="w-full h-full bg-gray-800"></div>
           </div>
         </div>
-        {% endif %}
-  
+
         <!-- Details Section -->
         <div class="text-gray-600 text-sm">
           <p><span class="font-bold">Details:</span> {{ company.additional_details }}</p>
         </div>
+        {% endif %}
     </div>
       </div>
     </div>
