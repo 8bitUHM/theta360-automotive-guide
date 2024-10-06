@@ -1,14 +1,112 @@
 {% extends "base.html" %}
 
 {% block title %}
-  {{ company.company_name }}
+{{ company.company_name }}
 {% endblock %}
 
 {% block content %}
-<div class="container mx-auto py-12">
-    <h1 class="text-4xl font-bold text-center">{{ company.company_name }}</h1>
-      <div class="flex justify-center mt-6">
-        <img class="w-64 h-64 object-cover" src="{{ company.image.url }}" alt="{{ company.company_name }}">
+<!-- container for left and right section -->
+<div class="flex flex-col lg:flex-row items-center lg:items-start">
+  <!-- left side : big company image -->
+  <div class="w-full lg:w-full/2 mb-8 lg:mb-0">
+    <img class="object-cover" src="{{ company.image.url }}" alt="{{ company.company_name }}">
+  </div>
+  
+  <!-- right section -->
+  <div class="w-full lg:w-full/2 lg:pl-12 py-12 px-12">
+    
+    <!-- Company description -->
+    <div class="mb-6">
+      <h2 class="text-2xl font-bold mb-2">{{ company.company_name }}</h2>
+      <h3 class="text-5lg font-semibold mb-2">{{ company.tagline }}</h3>
+      <p class="text-gray-700">{{ company.details }}</p>
+      <p class="mt-8 font-bold">REFERENCE</p>
+      <p><a href="{{ company.reference_link }}" class="text-gray-500 hover:text-gray-700 hover:underline">{{ company.reference_link_label }}</a></p>
     </div>
+    
+    <!-- chart and details section -->
+    <div class="flex flex-col lg:flex-row lg:space-y-0 lg:space-x-6 pt-40 pb-32">
+      <!-- Left side - Circle and Opinion -->
+      {% if company.show_chart %}
+      <div class="flex flex-col items-center space-y-4 px-12 mx-auto mb-8">
+        <!-- Circular Percentage -->
+        <div class="flex flex-col items-center justify-center w-40 h-40 border-4 border-gray-800 rounded-full">
+          <span class="text-5xl font-bold">100%</span>
+          <span class="text-lg text-gray-500">X Ready</span>
+        </div>
+        <!-- Opinion Section -->
+        <div class="text-center">
+          <h3 class="text-lg font-bold">Our Opinion</h3>
+          <p class="text-gray-700">{{ company.opinion }}</p>
+        </div>
+      </div>
+      {% endif %}
+    
+
+      <!-- Right side - Progress Bars and Details -->
+      {% if company.show_chart %}
+      <div class="flex flex-col space-y-4 px-12">
+        <!-- Progress Bars -->
+        <div class="space-y-4">
+          <!-- Bar 1 -->
+          <div class="flex justify-between items-center">
+            <span>Connect</span>
+            <span>{{ company.connect }}%</span>
+          </div>
+          <div id="barContain" class="w-full h-2 bg-gray-200 rounded-lg">
+            <div id="statBarConnect" class="h-full bg-gray-800 rounded-lg "></div>
+          </div>
+  
+          <!-- Bar 2 -->
+          <div class="flex justify-between items-center">
+            <span>Take Picture</span>
+            <span>{{ company.take_picture }}%</span>
+          </div>
+          <div  id="barContain" class="w-full h-2 bg-gray-200 rounded-lg">
+            <div id="statBarTakePicture" class="h-full bg-gray-800 rounded-lg "></div>
+          </div>
+  
+          <!-- Bar 3 -->
+          <div class="flex justify-between items-center">
+            <span>View</span>
+            <span>{{ company.view }}%</span>
+          </div>
+          <div id="barContain" class="w-full h-2 bg-gray-200 rounded-lg">
+            <div id="statBarView" class="h-full bg-gray-800 rounded-lg"></div>
+          </div>
+        </div>
+
+        <!-- Details Section -->
+        <div class="text-gray-600 text-sm">
+          <p><span class="font-bold">Details:</span> {{ company.additional_details }}</p>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if not company.show_chart %}
+      <div class="text-gray-700">testing chart coming soon...</div>
+      {% endif %}
+      </div>
+    </div>
+
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Set the final width for 'Connect' bar
+    const barConnect = document.getElementById('statBarConnect');
+    const connectValue = "{{ company.connect }}";  // Django value for 'connect'
+    barConnect.style.width = connectValue + '%';   // Set width dynamically
+
+    // Set the final width for 'Take Picture' bar
+    const barTakePicture = document.getElementById('statBarTakePicture');
+    const takePictureValue = "{{ company.take_picture }}";  // Django value for 'take_picture'
+    barTakePicture.style.width = takePictureValue + '%';   // Set width dynamically
+
+    // Set the final width for 'View' bar
+    const barView = document.getElementById('statBarView');
+    const viewValue = "{{ company.view }}";  // Django value for 'view'
+    barView.style.width = viewValue + '%';   // Set width dynamically
+  }); 
+
+</script>
 {% endblock %}
