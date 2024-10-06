@@ -8,12 +8,12 @@
 <!-- container for left and right section -->
 <div class="flex flex-col lg:flex-row items-center lg:items-start">
   <!-- left side : big company image -->
-  <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
+  <div class="w-full lg:w-full/2 mb-8 lg:mb-0">
     <img class="object-cover" src="{{ company.image.url }}" alt="{{ company.company_name }}">
   </div>
   
   <!-- right section -->
-  <div class="w-full lg:w-1/2 lg:pl-12 py-12 px-12">
+  <div class="w-full lg:w-full/2 lg:pl-12 py-12 px-12">
     
     <!-- Company description -->
     <div class="mb-6">
@@ -53,8 +53,8 @@
             <span>Connect</span>
             <span>{{ company.connect }}%</span>
           </div>
-          <div class="w-full h-2 bg-gray-200">
-            <div class="w-full h-full bg-gray-800 rounded-md"></div>
+          <div id="barContain" class="w-full h-2 bg-gray-200 rounded-lg">
+            <div id="statBarConnect" class="h-full bg-gray-800 rounded-lg "></div>
           </div>
   
           <!-- Bar 2 -->
@@ -62,8 +62,8 @@
             <span>Take Picture</span>
             <span>{{ company.take_picture }}%</span>
           </div>
-          <div class="w-full h-2 bg-gray-200">
-            <div class="w-full h-full bg-gray-800 rounded-md"></div>
+          <div  id="barContain" class="w-full h-2 bg-gray-200 rounded-lg">
+            <div id="statBarTakePicture" class="h-full bg-gray-800 rounded-lg "></div>
           </div>
   
           <!-- Bar 3 -->
@@ -71,8 +71,8 @@
             <span>View</span>
             <span>{{ company.view }}%</span>
           </div>
-          <div class="w-full h-2 bg-gray-200">
-            <div class="w-full h-full bg-gray-800 rounded-md"></div>
+          <div id="barContain" class="w-full h-2 bg-gray-200 rounded-lg">
+            <div id="statBarView" class="h-full bg-gray-800 rounded-lg"></div>
           </div>
         </div>
 
@@ -90,4 +90,23 @@
     </div>
 
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Set the final width for 'Connect' bar
+    const barConnect = document.getElementById('statBarConnect');
+    const connectValue = "{{ company.connect }}";  // Django value for 'connect'
+    barConnect.style.width = connectValue + '%';   // Set width dynamically
+
+    // Set the final width for 'Take Picture' bar
+    const barTakePicture = document.getElementById('statBarTakePicture');
+    const takePictureValue = "{{ company.take_picture }}";  // Django value for 'take_picture'
+    barTakePicture.style.width = takePictureValue + '%';   // Set width dynamically
+
+    // Set the final width for 'View' bar
+    const barView = document.getElementById('statBarView');
+    const viewValue = "{{ company.view }}";  // Django value for 'view'
+    barView.style.width = viewValue + '%';   // Set width dynamically
+  }); 
+
+</script>
 {% endblock %}
