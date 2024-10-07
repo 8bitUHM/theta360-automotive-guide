@@ -16,4 +16,5 @@ def index(request):
 
 def company_detail(request, slug):
     company = get_object_or_404(Company, slug=slug)
-    return render(request, 'pages/company.html', {'company': company})
+    x_ready_percent = round((company.connect + company.take_picture + company.view)/3)
+    return render(request, 'pages/company.html', {'company': company, 'x_ready_percent':x_ready_percent})
