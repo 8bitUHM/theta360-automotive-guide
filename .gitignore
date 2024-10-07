@@ -20,3 +20,5 @@ local_settings.py
 !*/static/
 
 dist
+
+node_modules

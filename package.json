@@ -1,0 +1,16 @@
+{
+  "name": "theta360-automotive-guide",
+  "version": "1.0.0",
+  "description": "This is the theta 360 automotive guide website ported from the old site [here](https://automotive.theta360.guide/) to Django.\r Old site repo found [here](https://github.com/theta-automotive/theta-automotive.github.io)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"python manage.py runserver\" \"python manage.py tailwind start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
