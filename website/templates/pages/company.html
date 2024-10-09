@@ -6,7 +6,7 @@
 
 {% block content %}
 <!-- container for left and right section -->
-<div class="grid grid-cols-1 xl:grid-cols-2 py-10 pb-40 xl:container xl:mx-auto"  data-aos="fade-up" data-aos-duration="1500">
+<div class="grid grid-cols-1 xl:grid-cols-2 py-10 pb-40 container mx-auto"  data-aos="fade-up" data-aos-duration="1500">
   <!-- left side : big company image -->
   <div class="w-full flex justify-center">
     <img
@@ -17,7 +17,7 @@
   </div>
 
   <!-- right section -->
-  <div class="w-full p-6">
+  <div class="w-full xl:p-6 py-6" >
     <!-- Company description -->
     <div class="mb-6">
       <h2 class="text-2xl font-bold mb-2">{{ company.company_name }}</h2>
