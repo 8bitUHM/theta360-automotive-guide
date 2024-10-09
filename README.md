@@ -45,10 +45,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG=True
 
 DATABASES = {
-    "default":{
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+  "default":{
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': BASE_DIR / 'db.sqlite3',
+  }
 }
 ```
 3. In ./core folder, create a new file called .env and add the environment variables from our project discord channel theta-360
