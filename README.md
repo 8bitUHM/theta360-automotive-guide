@@ -33,8 +33,9 @@ The project is organized into several components:
 
 ## Getting the app running
 
+**If you are using Python 3 or the commands prefixed with just pip or python, run using python3 or pip3**
 
-1. In a new terminal run `pip install -r requirements.txt` or `pip3 install -r requirements.txt`
+1. In a new terminal run `pip install -r requirements.txt`
 2. in ./core folder, create a new file called local_settings.py and add
 
 ```
@@ -53,14 +54,16 @@ DATABASES = {
 ```
 3. In ./core folder, create a new file called .env and add the environment variables from our project discord channel theta-360
 
-4. Cd into theme/static_src and run `npm install`
+4. While in root directory, `npm install`
 
-5. Start tailwind styling compilation by running `python manage.py tailwind start` or `python manage.py tailwind build` to build once
+5. Cd into website and run `npm install`
 
-6. Collect all static files with `python manage.py collectstatic`
+6. Cd back into root directory and collect all static files with `python manage.py collectstatic`
 
 7. Update your local database by running `python manage.py migrate`
 
-8. Start the app by running `python manage.py runserver` in terminal, the app should be running locally on port 8000, http://127.0.0.1:8000/
+8. Create a super user for the admin portal with `python manage.py createsuperuser`
+
+9. In the root directory, start the app by running `npm run dev` or if you use python3 for your commands, run `npm run dev3`
 
 
