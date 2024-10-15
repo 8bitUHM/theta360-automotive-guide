@@ -25,6 +25,9 @@ COPY . /app/
 # Install dependencies from requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Install node scripts
+RUN npm install
+
 # Change to the theme/static_src directory and install Node.js dependencies
 WORKDIR /website
 RUN npm install
