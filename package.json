@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"python manage.py runserver\" \"npm --prefix website run dev\"",
+    "dev3": "concurrently \"python3 manage.py runserver\" \"npm --prefix website run dev\"",
     "build": "npm --prefix website run build"
   },
   "keywords": [],
