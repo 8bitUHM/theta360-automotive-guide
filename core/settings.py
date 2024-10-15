@@ -47,10 +47,7 @@ INSTALLED_APPS = [
     'website',
     'db_file_storage',
     'corsheaders',
-    'rest_framework',
-    'tailwind',
-    'theme',
-    'django_browser_reload'
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -192,13 +189,9 @@ except ImportError:
     
 CORS_ORIGIN_ALLOW_ALL = True
 
-
-TAILWIND_APP_NAME = 'theme'
-
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
-
 
 # Portal Customization
 JAZZMIN_SETTINGS = {
