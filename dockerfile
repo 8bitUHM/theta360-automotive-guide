@@ -26,14 +26,14 @@ COPY . /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Change to the theme/static_src directory and install Node.js dependencies
-WORKDIR /app/theme/static_src
+WORKDIR /website
 RUN npm install
 
 # Change back to the app directory
 WORKDIR /app
 
 # Run Tailwind build and collect static files
-RUN python manage.py tailwind build && python manage.py collectstatic --noinput
+RUN npm run build && python manage.py collectstatic --noinput
 
 # Expose port 8000 for the Django application
 EXPOSE 8000
