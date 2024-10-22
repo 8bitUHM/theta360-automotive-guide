@@ -29,7 +29,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN npm install
 
 # Change to the theme/static_src directory and install Node.js dependencies
-WORKDIR /website
+WORKDIR /app/website
 RUN npm install
 
 # Change back to the app directory
