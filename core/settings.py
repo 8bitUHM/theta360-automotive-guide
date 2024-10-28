@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv('PROJECT_SECRET')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', 'localhost','rzsbs9xpqz.us-west-2.awsapprunner.com', 'automotive.theta360.guide']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', 'localhost','rzsbs9xpqz.us-west-2.awsapprunner.com','automotive.theta360.technology']
 
 
 # Application definition
@@ -316,4 +316,4 @@ JAZZMIN_SETTINGS = {
     "show_ui_builder": False,
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://rzsbs9xpqz.us-west-2.awsapprunner.com', 'https://automotive.theta360.guide']
+CSRF_TRUSTED_ORIGINS = ['https://rzsbs9xpqz.us-west-2.awsapprunner.com', 'https://automotive.theta360.technology']
